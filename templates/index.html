@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Telecom Customer Churn Dashboard</h1>
+        <p>An interactive dashboard exploring key drivers of customer churn.</p>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <div class="card">
+                <h2>Overall Churn Rate</h2>
+                <canvas id="churnRateChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Churn by Contract Type</h2>
+                <canvas id="contractChart"></canvas>
+            </div>
+            <div class="card">
+                <h2>Churn by Tech Support</h2>
+                <canvas id="techSupportChart"></canvas>
+            </div>
+
+            <div class="card insights-card">
+                <h2>🔑 Actionable Insights</h2>
+                <ul>
+                    <li>
+                        <strong>Insight:</strong> Customers on <strong>Month-to-Month contracts</strong> churn at a much higher rate.
+                        <br>
+                        <strong>Action:</strong> Offer discounts or perks to encourage them to switch to annual contracts.
+                    </li>
+                    <li>
+                        <strong>Insight:</strong> Customers <strong>without Tech Support</strong> are more likely to leave.
+                        <br>
+                        <strong>Action:</strong> Bundle Tech Support with popular plans or offer a free trial to showcase its value.
+                    </li>
+                     <li>
+                        <strong>Insight:</strong> New customers with <strong>low tenure</strong> are a high-risk group.
+                        <br>
+                        <strong>Action:</strong> Implement a robust onboarding program and check in after the first month.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
